@@ -15,6 +15,7 @@ public class ItemObject {
     private var price  : Float!
     private var totalCost : Float!
     private var purchaseDate : Date!
+    private var itemBarCode : Int32!
 
     init () {
         itemName = ""
@@ -35,7 +36,17 @@ public class ItemObject {
         self.price = price
         self.purchaseDate = purchaseDate
         self.totalCost = totalCost
+        self.itemBarCode = generateUniqueBarCode()
     }
+    
+    func generateUniqueBarCode ()  -> Int32 {
+        return 1
+    }
+    
+    func getUniqueBarCode () -> Int32 {
+        return itemBarCode
+    }
+    
     func getItemName () -> String {
         return itemName
     }

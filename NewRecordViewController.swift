@@ -7,7 +7,6 @@
 
 
 import UIKit
-
 class NewRecordViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var visualViewBlur: UIVisualEffectView!
@@ -52,6 +51,7 @@ class NewRecordViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
+
         
     }
     
@@ -77,14 +77,12 @@ class NewRecordViewController: UIViewController, UITextFieldDelegate {
         
         viewEffectProp = visualViewBlur.effect //Store the effect of the visualViewBlur in viewEffect
         visualViewBlur.effect = nil
-        
         costTextField.delegate = self
         amountTextField.delegate = self
         descTextField.delegate = self
         nameTextField.delegate = self
         reason1TextField.delegate = self
         totalCostTextField.delegate = self
-        
         costTextField.backgroundColor = .grayL2EXTEND()
         amountTextField.backgroundColor = .grayL2EXTEND()
         descTextField.backgroundColor = .grayL2EXTEND()
@@ -111,12 +109,12 @@ class NewRecordViewController: UIViewController, UITextFieldDelegate {
         doneBar.backgroundColor = .white
         let nextButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.exitKeyBoard))
         doneBar.setItems([nextButton], animated: false)
-        costTextField.inputAccessoryView = doneBar
-        amountTextField.inputAccessoryView = doneBar
-        descTextField.inputAccessoryView = doneBar
-        nameTextField.inputAccessoryView = doneBar
-        reason1TextField.inputAccessoryView = doneBar
-        totalCostTextField.inputAccessoryView = doneBar
+        costTextField.addDoneCancelToolbar(onDone: (target: self, action: #selector(self.exitKeyBoard)))
+        amountTextField.addDoneCancelToolbar(onDone: (target: self, action: #selector(self.exitKeyBoard)))
+        descTextField.addDoneCancelToolbar(onDone: (target: self, action: #selector(self.exitKeyBoard)))
+        nameTextField.addDoneCancelToolbar(onDone: (target: self, action: #selector(self.exitKeyBoard)))
+        reason1TextField.addDoneCancelToolbar(onDone: (target: self, action: #selector(self.exitKeyBoard)))
+        totalCostTextField.addDoneCancelToolbar(onDone: (target: self, action: #selector(self.exitKeyBoard)))
 
     }
     /**End keyboard editing*/
@@ -166,7 +164,8 @@ class NewRecordViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func closeBar(_ sender: Any) {
-        NavigationService.navigateToMainSpendingPage(self)
+        NavigationService.navigateToAddItemPage(self)
+        
         animateOutPopView()
     }
     @IBAction func categoryBttn(_ sender: Any) {
@@ -299,7 +298,8 @@ class NewRecordViewController: UIViewController, UITextFieldDelegate {
     /**Process to add the pageviewcontroller into the idcardviewcontroller*/
     func configurePageViewController()
     {   //get reference to custom pageviewcontroller
-        guard let pageViewController = self.storyboard?.instantiateViewController(withIdentifier: "PopUpPageViewController") as? UIPageViewController
+        let storyBoardNew: UIStoryboard = UIStoryboard( name: "SpendingRecord" , bundle: nil)
+        guard let pageViewController = storyBoardNew.instantiateViewController(withIdentifier: "PopUpPageViewController") as? UIPageViewController
             else { return }
         
         // Assign the deligate and datasource then need to add some required methods

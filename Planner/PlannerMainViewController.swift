@@ -203,12 +203,8 @@ class PlannerMainViewController: UIViewController, UIPageViewControllerDelegate,
         return detailViewControllerAt(currentIndex)
     }
 
+
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! PlannerCollectionViewController
-        destinationVC.arrayList = PlannerMainViewController.currMonth
-        print ("THe totla count of \(destinationVC.arrayList.count)")
-    }
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         let dataViewController = viewController as? PlannerCollectionViewController
         var currentIndex = dataViewController!.indexForPageView
@@ -228,6 +224,24 @@ class PlannerMainViewController: UIViewController, UIPageViewControllerDelegate,
         currDisplayDateOutlet.setTitle("\(currY ?? 0)  \(monthStr)", for: .normal)
         return detailViewControllerAt(currentIndex)
     }
+    //Display the swipped view controller
+      
+      func detailViewControllerAt( _ i : Int) -> PlannerCollectionViewController? {
+          //to prevent over step the array
+          if i >= dataSource || dataSource == 0 {
+              return nil }
+          print ("value count detailViewControllerAt :\(PlannerMainViewController.currMonth.count)") //issue here
+          let currStoryboard = UIStoryboard( name: "Planner" , bundle: nil)
+          guard let dataViewController = currStoryboard.instantiateViewController(withIdentifier: "PlannerCollectionViewController") as? PlannerCollectionViewController
+              else { return nil }
+          dataViewController.arrayList = PlannerMainViewController.currMonth
+          //Add data to the view
+          dataViewController.indexForPageView = i
+          //everyswipe the date change
+          
+          return dataViewController
+      }
+      
     /**Process to add the pageviewcontroller into the idcardviewcontroller*/
     func configurePageViewController () {
         //get reference to custom pageviewcontroller
@@ -261,21 +275,5 @@ class PlannerMainViewController: UIViewController, UIPageViewControllerDelegate,
         guard let startingViewController = detailViewControllerAt( currentViewIndex) else{  return }
         pageViewController.setViewControllers([startingViewController], direction: .forward, animated: true)
     }
-    //Display the swipped view controller
-    
-    func detailViewControllerAt( _ i : Int) -> PlannerCollectionViewController? {
-        //to prevent over step the array
-        if i >= dataSource || dataSource == 0 {
-            return nil }
-        print ("value count detailViewControllerAt :\(PlannerMainViewController.currMonth.count)") //issue here
-        let currStoryboard = UIStoryboard( name: "Planner" , bundle: nil)
-        guard let dataViewController = currStoryboard.instantiateViewController(withIdentifier: "PlannerCollectionViewController") as? PlannerCollectionViewController
-            else { return nil }
-        
-        //Add data to the view
-        dataViewController.indexForPageView = i
-        //everyswipe the date change
-        return dataViewController
-    }
-    
+  
 }

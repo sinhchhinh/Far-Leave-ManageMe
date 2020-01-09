@@ -42,7 +42,7 @@ class UserAuthenticationViewController: UIViewController , UIPageViewControllerD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+     
         // Do any additional setup after loading the view.
         configurePageViewController()
     }

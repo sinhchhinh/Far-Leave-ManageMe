@@ -22,7 +22,13 @@ class NavigationService : UIViewController {
     static func navigateToAddItemPage(_ viewController : UIViewController) {
         let storyBoard: UIStoryboard = UIStoryboard( name: "SpendingRecord" , bundle: nil)
         let webViewer = storyBoard.instantiateViewController(withIdentifier: "NewRecordViewController") as! NewRecordViewController
-        viewController.present(webViewer, animated: true, completion: nil)
+        let destinationNavigationController = storyBoard.instantiateViewController(withIdentifier: "Nav1") as! UINavigationController
+        destinationNavigationController.pushViewController(webViewer, animated: true)
+        viewController.present(destinationNavigationController, animated: true, completion: nil)
+
+       // viewController.present(webViewer, animated: true, completion: nil)
+
+
     }
     static func navigateToSignIn(_ viewController : UIViewController) {
         let storyBoard: UIStoryboard = UIStoryboard( name: "Main" , bundle: nil)

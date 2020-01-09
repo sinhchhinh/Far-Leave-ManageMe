@@ -10,6 +10,7 @@ import Foundation
 
 extension UITextField {
     func setBorderUIEXTEND ( borderColor : CGColor , cornerRadius : CGFloat , borderWidth : CGFloat ) {
+        clipsToBounds = true
         layer.borderColor = borderColor
         layer.borderWidth = borderWidth
         layer.cornerRadius = cornerRadius

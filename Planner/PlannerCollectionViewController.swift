@@ -20,7 +20,7 @@ class PlannerCollectionViewController: UIViewController , UICollectionViewDelega
         collectionView.delegate = self
         let layout   = UICollectionViewFlowLayout()
         cellWidth = collectionView.bounds.width / 9
-        layout.itemSize = CGSize(width: cellWidth, height: 50 )
+        layout.itemSize = CGSize(width: cellWidth, height: 40 )
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 5
         layout.minimumLineSpacing      = 5
@@ -43,7 +43,7 @@ class PlannerCollectionViewController: UIViewController , UICollectionViewDelega
         let idCardCell = collectionView.dequeueReusableCell(withReuseIdentifier: "plannerCell", for: indexPath) as! PlannerCollectionViewCell
         // idCardCell.optionImgView.image = UIImage(named: "add")
         print ("THe current value of the collection view :\(indexPath.item)")
-         if PlannerMainViewController.currMonth[indexPath.item] != 0 {
+         if arrayList[indexPath.item] != 0 {
             idCardCell.dayLabel.text = "\(PlannerMainViewController.currMonth[indexPath.item])"
          }
          idCardCell.contentView.backgroundColor = .white

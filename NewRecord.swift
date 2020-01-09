@@ -7,6 +7,10 @@
 //
 
 import Foundation
+import UIKit
 struct NewRecord {
     var cost : Double
+    var itemName : String
+    var category : String
+    var colorCode : UIColor
 }

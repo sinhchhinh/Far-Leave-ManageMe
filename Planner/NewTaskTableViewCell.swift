@@ -18,12 +18,10 @@ class NewTaskTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
-    //Deal with the issue of repeat cell when scroll up and down
+    // Remove current info in taskStackView to proevent repeat cell when scroll up and down 
     override func prepareForReuse() {
-        // CELLS STILL FREEZE EVEN WHEN THE FOLLOWING LINE IS COMMENTED OUT?!?!
         super.prepareForReuse()
         taskStackView.subviews.forEach { (view) in
                 view.removeFromSuperview()    

@@ -9,7 +9,6 @@
 import UIKit
 
 class PlannerCollectionViewCell: UICollectionViewCell {
-
     @IBOutlet weak var dayLabel: UILabel!
     
   

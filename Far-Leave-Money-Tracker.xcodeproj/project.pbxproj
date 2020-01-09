@@ -10,6 +10,8 @@
 		DE91C540A26E45DEE246914F /* Pods_Far_Leave_Money_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01DB20CE950894FD28D2EAF2 /* Pods_Far_Leave_Money_Tracker.framework */; };
 		E624075C23A3C52F001D6B6E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624075B23A3C52F001D6B6E /* DateExtension.swift */; };
 		E624075E23A3D824001D6B6E /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624075D23A3D824001D6B6E /* RecordDetailViewController.swift */; };
+		E643374623C118E0000E6C8F /* ExtraLabelViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643374523C118E0000E6C8F /* ExtraLabelViewUI.swift */; };
+		E643374823C2D5E6000E6C8F /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643374723C2D5E6000E6C8F /* CategoryTableViewCell.swift */; };
 		E66AE4C223B58EF7006F86BF /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66AE4C123B58EF7006F86BF /* TaskTableViewCell.swift */; };
 		E66B64592395DFB60086DC4F /* OptionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66B64582395DFB60086DC4F /* OptionCollectionViewController.swift */; };
 		E66B645B2395F1AD0086DC4F /* OptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66B645A2395F1AD0086DC4F /* OptionCollectionViewCell.swift */; };
@@ -60,6 +62,8 @@
 		E4F56230EB1B16ADFE0D55D4 /* Pods-Far-Leave-Money-Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Far-Leave-Money-Tracker.release.xcconfig"; path = "Target Support Files/Pods-Far-Leave-Money-Tracker/Pods-Far-Leave-Money-Tracker.release.xcconfig"; sourceTree = "<group>"; };
 		E624075B23A3C52F001D6B6E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		E624075D23A3D824001D6B6E /* RecordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailViewController.swift; sourceTree = "<group>"; };
+		E643374523C118E0000E6C8F /* ExtraLabelViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraLabelViewUI.swift; sourceTree = "<group>"; };
+		E643374723C2D5E6000E6C8F /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		E66AE4C123B58EF7006F86BF /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		E66B64582395DFB60086DC4F /* OptionCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCollectionViewController.swift; sourceTree = "<group>"; };
 		E66B645A2395F1AD0086DC4F /* OptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 		E68DEBE72384BB69007DD292 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				E624075B23A3C52F001D6B6E /* DateExtension.swift */,
+				E643374523C118E0000E6C8F /* ExtraLabelViewUI.swift */,
 				E68DEBE52384BAB1007DD292 /* ExtraButtonUI.swift */,
 				E69A92482389738300F48FEE /* FontPallette.swift */,
 				E68DEBE32384B761007DD292 /* ExtraTextFieldUI.swift */,
@@ -173,9 +179,10 @@
 				E624075D23A3D824001D6B6E /* RecordDetailViewController.swift */,
 				E689019D23A301C100534DB2 /* RecordListTableViewCell.swift */,
 				E66B645E2398BEE30086DC4F /* SummarySpendViewController.swift */,
-				E624075B23A3C52F001D6B6E /* DateExtension.swift */,
-				E689019923A1EF9100534DB2 /* NewRecord.swift */,
+				E643374723C2D5E6000E6C8F /* CategoryTableViewCell.swift */,
+				E68DEBEE2384D38F007DD292 /* NewRecordViewController.swift */,
 				E689019723A1BF2700534DB2 /* MacawChartView.swift */,
+				E689019923A1EF9100534DB2 /* NewRecord.swift */,
 				E689019523A08AB900534DB2 /* BarCollectionViewCell.swift */,
 				E69A924E238E0DE600F48FEE /* Category.swift */,
 				E69A924A23898A2700F48FEE /* Global.swift */,
@@ -183,7 +190,6 @@
 				E68DEBF02384D3B7007DD292 /* SettingViewController.swift */,
 				E66B645A2395F1AD0086DC4F /* OptionCollectionViewCell.swift */,
 				E66B64582395DFB60086DC4F /* OptionCollectionViewController.swift */,
-				E68DEBEE2384D38F007DD292 /* NewRecordViewController.swift */,
 				E68DEBE72384BB69007DD292 /* Utility */,
 				E6F4E6CC23820BB400F4D6A4 /* SecAuthViewController.swift */,
 				E68DEBE1238398A3007DD292 /* SignInViewController.swift */,
@@ -351,6 +357,7 @@
 				E6ABA2C423A8714400024A7D /* DiaryContentViewController.swift in Sources */,
 				E68DEBF32384D5D3007DD292 /* MainTabViewController.swift in Sources */,
 				E68DEBF12384D3B7007DD292 /* SettingViewController.swift in Sources */,
+				E643374823C2D5E6000E6C8F /* CategoryTableViewCell.swift in Sources */,
 				E689019623A08AB900534DB2 /* BarCollectionViewCell.swift in Sources */,
 				E6F4E6B323819C3A00F4D6A4 /* SceneDelegate.swift in Sources */,
 				E68DEBE2238398A3007DD292 /* SignInViewController.swift in Sources */,
@@ -376,6 +383,7 @@
 				E68DEBE92384BBA9007DD292 /* ColorPalette.swift in Sources */,
 				E689019823A1BF2700534DB2 /* MacawChartView.swift in Sources */,
 				E69A92492389738300F48FEE /* FontPallette.swift in Sources */,
+				E643374623C118E0000E6C8F /* ExtraLabelViewUI.swift in Sources */,
 				E69A924B23898A2700F48FEE /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
